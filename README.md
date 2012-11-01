@@ -9,7 +9,7 @@ dotchartdf
 
 **Usage**
 
-	dotchartdf(data, xvar, yvar, title, alpha=0.05, dividers=TRUE,
+	dotchartdf(data, xvar, yvar, title="", alpha=0.05, dividers=TRUE,
 	           log=FALSE, dotspacing=0.07, legend=TRUE)
 
 
@@ -22,7 +22,7 @@ Creates a dotchart from a dataframe.
 `title` will be used as the title of the plot.  
 `alpha` sets the confidence interval. The default value is 0.05. If alpha is set to 0,
 	no confidence intervals or mean/median lines will be drawn.  
-`dividers` is a flag that will draw vertical dividers between factors if set to TRUE. Default is TRUE. 
+`dividers` is a flag that will draw vertical dividers between factors if set to TRUE. Default is TRUE.   
 `log` is a flag that will take the log of the yvar values if set to TRUE. Default is FALSE.  
 `dotspacing` sets the horizontal spacing between dots with the same value in a factor.
 	Setting dotspacing is useful when there are lots of dots or very few factors.  
