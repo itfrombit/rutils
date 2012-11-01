@@ -1,4 +1,8 @@
-## Function for plotting dotcharts from data frames:
+## dotchartdf.r
+##
+## Function for plotting dotcharts from data frames.
+##
+## Author: Jeff Buck
 ## 
 ## dotchartdf <- function(data, xvar, yvar, title="", alpha=0.05, dividers=TRUE,
 ##                        log=FALSE, dotspacing=0.07, legend=TRUE)
@@ -28,13 +32,13 @@
 ## 
 ## par(mfrow=c(2,2))
 ## for (param in c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")) {
-## dotchartdf(iris, "Species", param, paste(param,"by Species"))
+##   dotchartdf(iris, "Species", param, paste(param,"by Species"))
 ## }
 ## par(mfrow=c(1,1))
 
 
 ## dotplotjitter - helper function to space and center the dots
-dotplotjitter <- function(i, data, dotspacing = 0.05) {
+dotplotjitter <- function(i, data, dotspacing = 0.07) {
   idx <- 1
   x <- rep(i, length(data))
   y <- rep(-1, length(data))
@@ -44,7 +48,7 @@ dotplotjitter <- function(i, data, dotspacing = 0.05) {
     # centerline is i
     value <- as.numeric(names(tdata[t]))
     
-    startoff = i - dotspacing * (tdata[t]-1)/2
+    startoff <- i - dotspacing * (tdata[t]-1)/2
     
     for (j in 1:tdata[t]) {
       y[idx] <- value
@@ -77,7 +81,7 @@ dotchartdf <- function(data, xvar, yvar, title="", alpha=0.05, dividers=TRUE,
   axis(side=1, at=1:length(splitdata), labels=names(splitdata))  # use factor names
   
   if (legend) {
-    legend("bottomright", legend=c("mean", "median", paste("alpha:",alpha)), 
+    legend("bottomright", legend=c("mean", "median", paste("alpha:", alpha)), 
            col=c("blue", "orange", "blue"), lty=c(2, 2, 1), cex=0.7)
   }
   if (dividers) {
