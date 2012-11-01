@@ -44,6 +44,11 @@ Creates a dotchart from a dataframe.
 	par(mfrow=c(1,1))
 
 
+**Sample output**
+
+![Insect Deaths by Insecticide Type](https://raw.github.com/itfrombit/rutils/master/dotchart_insecticide.png)
+
+
 Author
 ------
 Jeff Buck.
