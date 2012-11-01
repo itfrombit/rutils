@@ -53,8 +53,24 @@ Creates a dotchart from a dataframe.
 
 **Sample output**
 
+	data(InsectSprays)
+	dotchartdf(InsectSprays, "spray", "count", "Insect Deaths by Insecticide Type")
+
 ![Insect Deaths by Insecticide Type](https://raw.github.com/itfrombit/rutils/master/dotchart_insecticide.png)
 
+
+	data(airquality)
+	# Take the log of the Ozone values to try to get closer to a normal distribution
+	dotchartdf(airquality, "Month", "Ozone", "Ozone by Month", alpha=0.01, log=TRUE)
+
+![Ozone by Month](https://raw.github.com/itfrombit/rutils/master/ozone_by_month.png)
+
+
+	# The venerable iris data...
+	data(iris)
+	dotchartdf(iris, "Species", "Sepal.Length", "Sepal Length by Species", dotspacing=0.04)
+
+![Sepal Length by Species](https://raw.github.com/itfrombit/rutils/master/sepal_length_by_species.png)
 
 Author
 ------
